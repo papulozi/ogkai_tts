@@ -5,6 +5,10 @@ import uuid
 
 app = Flask(__name__)
 
+@app.route("/", methods=["GET"])
+def home():
+    return "OGKAI TTS API çalışıyor!", 200
+
 @app.route('/api/tts', methods=['POST'])
 def tts():
     data = request.get_json()
